@@ -3,7 +3,7 @@ function addUser(username, cb) {
         if(err) return cb(err)
         const arr = JSON.parse(buffer)
         if(arr.find(t => t.username == username)) return cb(new Error(username + ' already exists'))
-        const user
+        const user = {}
         user.username=username
         arr.push(user)
         const json = JSON.stringify(arr)
